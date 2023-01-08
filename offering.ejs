@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Offering</title>
+   </head>
+
+   <body>
+      <h1>Leave a Gift for Testudo!</h1>
+      <form action="/submittedGift" method="POST">
+         <fieldset>
+            <strong>Item:</strong>
+            <input type="text" name="item">
+
+            <br><br>
+
+            <strong>Quantity:</strong>
+            <input type="text" name="quantity">
+
+            <br><br>
+
+            <strong>Notes:</strong><br>
+            <textarea name="notes" rows="6" cols="80"></textarea>
+         </fieldset>
+
+         <br>
+
+         <input type="reset" value="Start Over">
+         <input type="submit" value="Leave Gift">
+
+         <hr><a href="/">Home</a>
+      </form>
+
+      <script>
+         window.onsubmit = confirm;
+
+         function confirm() {
+            alert("Would you like to leave these items with Testudo?");
+         }
+      </script>
+   </body>
+</html>
