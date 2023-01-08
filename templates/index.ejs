@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Gifts for Testudo</title>
+   </head>
+
+   <body>
+      <h1 style="font-family: Kenia; color: crimson;">Gifts for Testudo</h1>
+
+      Finals season for the Fall 2022 semester is here! Use the interactive forms below to leave offerings and prayers for Testudo, and receive good luck on your final exams!
+
+      (Disclaimer: Please do not leave garbage or used items with Testudo. We at the University of Maryland do not condone littering.)
+
+      <h2 style="color: indianred;">Gift Podium</h2>
+
+      To leave a gift for Testudo, select <a href="/offering">offering</a>.
+
+      To check the weather around Testudo, click <input type="button" value="here" onclick="displayWeather()">.
+
+      <br><br>
+
+      <span id="weather"></span>
+
+      <br><br><hr>
+
+      <h2 style="color: indianred;">Cleanup</h2>
+
+      To clean up the area around Testudo, select <a href="/cleanQuery">cleanup</a>.
+
+      <br><br><hr>
+      
+      <pre>Current Date and Time: <span id="date"></span></pre>
+
+      <script>
+         function displayWeather() {
+            let collegeParkWeatherURL = `https://api.weatherapi.com/v1/current.json?key=9b8994e64de3412f9c1223520221312&q=College Park&aqi=no`;
+            fetch(collegeParkWeatherURL)
+               .then(response => response.json())
+               .then(json => {
+                  document.getElementById("weather").innerHTML = "The weather on campus is currently " + json.current.temp_f + " degrees Fahrenheit.";
+                  console.log(json);
+               })
+               .catch(err => {
+                  console.log(err);
+               });
+         }
+
+         const date = new Date();
+         document.getElementById("date").innerHTML = date;
+      </script>
+   </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Cleaning</title>
+   </head>
+
+   <body>
+      <h1>Clean Testudo</h1>
+
+      Would you like to clean up the area around Testudo?
+
+      <br><br>
+
+      <form action="/clean" method="POST">
+         <input type="submit" value="Yes">
+      </form>
+
+      <br><a href="/">Home</a>
+
+      <br><hr>
+      
+      <pre>Current Date and Time: <span id="date"></span></pre>
+
+      <script>
+         const date = new Date();
+         document.getElementById("date").innerHTML = date;
+      </script>
+   </body>
+</html>
